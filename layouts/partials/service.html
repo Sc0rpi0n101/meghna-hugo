@@ -4,13 +4,14 @@
 {{ with $data.service.service}}
 {{"<!-- service -->" | safeHTML }}
 <section id="services" class="bg-one section">
-	<div class="container">
+	<div class="container pa-0" style="max-width: 80%;">
 		<div class="row justify-content-center">
 			<div class="col-lg-12">
 				{{"<!-- section title -->" | safeHTML }}
 				<div class="title text-center wow fadeIn" data-wow-duration="500ms">
 					<h2>{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color">
-						{{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</span></h2>
+							{{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</span>
+					</h2>
 					<div class="border-meghna"></div>
 				</div>
 			</div>
@@ -19,12 +20,14 @@
 			{{ range .service_item}}
 			{{"<!-- Single Service Item -->" | safeHTML }}
 			<article class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-duration="500ms">
-				<div class="service-block text-center">
-					<div class="service-icon text-center">
+				<div class="service-block"
+					style="background-image:url('{{ .image | absURL }}');background-size: cover; background-position: center center; background-repeat: no-repeat; min-height: 400px;">
+					<!-- <div class="service-icon text-center">
 						<i class="{{ .icon }}"></i>
+					</div> -->
+					<div class="service-text">
+						{{ .name | markdownify }}
 					</div>
-					<h3>{{ .name | markdownify }}</h3>
-					<p>{{ .content | markdownify }}</p>
 				</div>
 			</article>
 			{{"<!-- End Single Service Item -->" | safeHTML }}

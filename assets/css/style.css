@@ -2338,3 +2338,15 @@ figcaption {
 .cookie-box-hide {
   display: none;
 }
+
+.footer-responsive {
+  width: 100%;
+  max-height: 75;
+  height: auto;
+}
+
+.hero-responsive {
+  width: 100%;
+  max-height: 250;
+  height: auto;
+}

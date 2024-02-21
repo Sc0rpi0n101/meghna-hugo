@@ -5,18 +5,23 @@
 			<div class="col-xl-12">
 
 				{{"<!-- Footer Social Links -->" | safeHTML}}
-				<!-- <div class="social-icon">
+				<div class="social-icon">
 					<ul class="list-inline">
-						{{ range site.Params.social }}
-						<li class="list-inline-item"><a href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i></a>
+						<li class="list-inline-item"><a href="/terms-and-conditions">
+							<i class="ti-align-justify"></i>
+							<span class="d-none d-lg-inline">
+								Terms & Conditions</span>
+						</a></li>
+						<li class="list-inline-item"><a href="/privacy-policy"><i class="ti-book"></i>Privacy Policy</a>
 						</li>
-						{{ end }}
+						<li class="list-inline-item"><a href="/terms-of-use"><i class="ti-user"></i>Terms of Use</a>
+						</li>
 					</ul>
-				</div> -->
+				</div>
 
 				{{"<!-- copyright -->" | safeHTML}}
 				<div class="copyright text-center">
-					<a href="{{ site.Home.Permalink }}">
+					<a href="{{ site.Home.Permalink | safeURL }}">
 						<img src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}" class="footer-responsive" />
 					</a>
 					<br>
